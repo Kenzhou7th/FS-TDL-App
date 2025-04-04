@@ -82,9 +82,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        # Missing or incorrect ENGINE value
+        'ENGINE': 'django.db.backends.dummy',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
