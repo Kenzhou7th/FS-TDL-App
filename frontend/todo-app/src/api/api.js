@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Ensure this matches your backend endpoint
-const API_BASE_URL = 'http://127.0.0.1:8000/api/todoApp/';
+const API_BASE_URL = 'https://backend.onrender.com/api/todoApp/';
 
 // Fetch all todos
 export const fetchTodos = async () => {
