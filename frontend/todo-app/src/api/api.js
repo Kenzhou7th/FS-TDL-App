@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // Ensure this matches your backend endpoint
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-
+const API_BASE_URL = 'https://fs-tdl-app.onrender.com/api/todoApp/';
 // Fetch all todos
 export const fetchTodos = async () => {
   const response = await axios.get(API_BASE_URL);
