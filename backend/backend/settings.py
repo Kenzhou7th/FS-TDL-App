@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        # Missing or incorrect ENGINE value
+        'ENGINE': 'django.db.backends.dummy',  # Use the dummy backend
     }
 }
 
