@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://127.0.0.1:8000/api/todos/';
+// Ensure this matches your backend endpoint
+const API_BASE_URL = 'http://127.0.0.1:8000/api/todoApp/';
 
 // Fetch all todos
 export const fetchTodos = async () => {
@@ -10,8 +11,8 @@ export const fetchTodos = async () => {
 
 // Add a new todo
 export const addTodo = async (todo) => {
-  const response = await axios.post(API_BASE_URL, todo); // Send a POST request
-  return response.data; // Return the added task
+  const response = await axios.post(API_BASE_URL, todo);
+  return response.data;
 };
 
 // Update a todo
@@ -24,3 +25,8 @@ export const updateTodo = async (id, updatedTodo) => {
 export const deleteTodo = async (id) => {
   await axios.delete(`${API_BASE_URL}${id}/`);
 };
+
+// Test the connection
+axios.get(API_BASE_URL)
+  .then(response => console.log('Backend response:', response.data))
+  .catch(error => console.error('Error connecting to backend:', error));
