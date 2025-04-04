@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem';
+import { fetchTodos, addTodo, updateTodo, deleteTodo } from '../api/api';
+
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [darkMode, setDarkMode] = useState(false);
   const [filter, setFilter] = useState('all');
+
+useEffect(() => {
+  const getTodos = async () => {
+    const todos = await fetchTodos(); // Use fetchTodos here
+    setTodos(todos);
+  };
+  getTodos();
+}, []);
 
 // Function to toggle the completion status of a task
   const handleToggle = (id) => {
